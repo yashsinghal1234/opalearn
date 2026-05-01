@@ -8,6 +8,6 @@ deny contains msg if {
 
 # Deny if environment is not production-safe
 deny contains msg if {
-    input.env == "prod"
-    msg = "Deployment from dev environment is not allowed"
+    input.env != "prod"
+    msg = "Non-prod environment is not allowed"
 }
